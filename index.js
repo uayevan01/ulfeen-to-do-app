@@ -13,10 +13,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use(express.static(path.join(__dirname, "client", "build")));
-
-app.use('*', express.static(path.join(__dirname, "client", "build")))
-
 const db = require('./db/server.js');
 db.mongoose.connect(db.url, {
     useNewUrlParser: true,
@@ -28,7 +24,9 @@ db.mongoose.connect(db.url, {
     process.exit();
 })
 
-app.use('/api', require('./routes/api'))
+app.use('/api', require('./routes/api'));
+app.use(express.static(path.join(__dirname, "client", "build")));
+app.use('*', express.static(path.join(__dirname, "client", "build")));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
