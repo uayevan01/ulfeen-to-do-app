@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx concurrently \"npx nodemon index.js\"",
-    "heroku-postbuild": "cd client/ && npm install && npm start"
+    "build": "cd client/ && npm install && npm run build",
+    "dev": "npx concurrently \"npx nodemon index.js\" \"cd client && npm start\""
   },
   "author": "ulfeen ayevan",
   "license": "ISC",
