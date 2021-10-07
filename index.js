@@ -12,9 +12,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-/*app.get('/', (req, res) => {
-    res.json({message: "Welcome"});
-})*/
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+})
 
 const db = require('./db/server.js');
 db.mongoose.connect(db.url, {
