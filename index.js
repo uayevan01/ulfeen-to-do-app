@@ -29,7 +29,7 @@ db.mongoose.connect(db.url, {
 
 app.use('/api', require('./routes/api'))
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-    console.log(`Server running on port: ${PORT}`)
-})
+//const PORT = process.env.PORT || 4000;
+//app.listen(PORT, () => {
+//    console.log(`Server running on port: ${PORT}`)
+//})
