@@ -11,7 +11,7 @@ const TodoItem = ({ todo, deleteTodo, editTodo }) => {
         finalTimeHour = newTimeHour - 12;
     } else {
         isAM = 'AM';
-        if(finalTimeHour === 0)
+        if(timeHour === 0)
             finalTimeHour = 12;
         else
             finalTimeHour = newTimeHour;
