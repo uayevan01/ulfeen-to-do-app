@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require()
+const path = require('path')
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
@@ -13,11 +13,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+app.use(express.static(path.join(__dirname, "client", "build")));
 
-app.use('/', express.static(path.join(__dirname, '/client/build')));
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    });
+app.use('*', express.static(path.join(__dirname, "client", "build")))
 
 const db = require('./db/server.js');
 db.mongoose.connect(db.url, {
