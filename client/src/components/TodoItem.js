@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 const TodoItem = ({ todo, deleteTodo, editTodo }) => {
     const timeHour = parseInt(todo.createdAt.toString().substring(11, 13));
+    console.log(timeHour);
     const newTimeHour = (timeHour + 20) % 24;
     var finalTimeHour = 0;
     var isAM = '';
@@ -10,6 +11,10 @@ const TodoItem = ({ todo, deleteTodo, editTodo }) => {
         finalTimeHour = newTimeHour - 12;
     } else {
         isAM = 'AM';
+        if(finalTimeHour === 0)
+            finalTimeHour = 12;
+        else
+            finalTimeHour = newTimeHour;
     }
     const timeValue = finalTimeHour.toString() + todo.createdAt.toString().substring(13, 19) + ' ' + isAM;
     const [editing, setEditing] = useState(false)
