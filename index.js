@@ -12,9 +12,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.json({message: "Welcome"});
-})
+})*/
 
 const db = require('./db/server.js');
 db.mongoose.connect(db.url, {
