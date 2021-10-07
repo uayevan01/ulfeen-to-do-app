@@ -56,8 +56,8 @@ class Todo extends Component {
                 <h1>My Todo List</h1>
                 <Input getTodos = {this.getTodos}/>
                 <div></div>
-                <div style="font-size: calc(8px + 1vmin)">Single Click To Cross Off A Todo</div>
-                <div style="font-size: calc(8px + 1vmin)">Double Click To Edit A Todo</div>
+                <div>Single Click To Cross Off A Todo</div>
+                <div>Double Click To Edit A Todo</div>
                 <ListTodo todos = {todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}> </ListTodo>
             </div>
         )
