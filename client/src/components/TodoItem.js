@@ -6,9 +6,10 @@ const TodoItem = ({ todo, deleteTodo, editTodo }) => {
     const newTimeHour = (timeHour + 20) % 24;
     var finalTimeHour = 0;
     var isAM = '';
-    if(newTimeHour > 12) {
+    if(newTimeHour >= 12) {
         isAM = 'PM';
-        finalTimeHour = newTimeHour - 12;
+        if(newTimeHour > 12)
+            finalTimeHour = newTimeHour - 12;
     } else {
         isAM = 'AM';
         if(timeHour === 0)
