@@ -1,0 +1,112 @@
+
+@font-face {
+  font-family: 'ABeeZee';
+  font-style: normal;
+  font-weight: 400;
+  src: url(ABeeZee-Regular.ttf);
+}
+
+.App {
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  font-family: 'ABeeZee';
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  height: 40px;
+  width: 50%;
+  border: none;
+  border-bottom: 2px #2f78d8 solid;
+  background: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  border: 2px solid #4780fa;
+  margin-left: 10px;
+  font-size: 25px;
+  background: #1702db;
+  border-radius: 5px;
+  color: #ccc7bd;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1) perspective(1px)
+}
+
+button:focus {
+  outline: none;
+}
+
+.buttonType1 {
+  width: 25%;
+  height: 45px;
+}
+
+.buttonType2 {
+  width: 20%;
+  height: 45px;
+}
+
+.rightText {
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 15px;
+  background: #a460c4;
+  border-radius: 5px;
+}
+
+li {
+  padding: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  background: #080c08;
+  border-radius: 5px;
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 300px) {
+  .App {
+    width: 80%;
+  }
+
+  input {
+    width: 100%
+  }
+
+  button {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .App {
+    width: 60%;
+  }
+
+  input {
+    width: 50%;
+  }
+
+  button {
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}
