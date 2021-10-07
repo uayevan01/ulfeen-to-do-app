@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require()
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
@@ -13,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.json({message: "Welcome"});
+    res.sendFile(path.join(__dirname, '/client/build'));
 })
 
 const db = require('./db/server.js');
